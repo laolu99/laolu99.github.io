@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    
+    Hexo</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-一刷java编程思想笔记(1)" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+
+    
+      <div class="article-meta">
+        <a href="/2021/06/24/%E4%B8%80%E5%88%B7java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E7%AC%94%E8%AE%B0(1)/" class="article-date">
+  <time datetime="2021-06-23T17:30:11.017Z" itemprop="datePublished">2021-06-24</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <h1 id="一刷java编程思想笔记（1）"><a href="#一刷java编程思想笔记（1）" class="headerlink" title="一刷java编程思想笔记（1）"></a>一刷java编程思想笔记（1）</h1><h2 id="对象导论"><a href="#对象导论" class="headerlink" title="*对象导论"></a>*对象导论</h2><p><em><strong>面向对象思想的实质</strong></em>：程序可以通过添加新类型的对象，使自身适用于某个特定问题。</p>
+<p><em><strong>面向对象语言的五大特性</strong></em>：</p>
+<ul>
+<li><p><em>万物皆对象</em>。将对象视为一个奇特的变量，它可以存储数据，还可以在自身上执行操作。理论上可以抽取待求解问题的任何概念化构件，将其表示为程序中的对象。</p>
+</li>
+<li><p><em>程序是对象的集合</em>。他们通过彼此发送消息来告知彼此所需要做的。想要请求一个对象，就必须对该对象发送一条消息，可以把消息看成对某个特定对象的方法的调用请求。</p>
+</li>
+<li><p><em>每个对象都有自己的由其他对象所构成的存储</em>。换句话说，可与通过创建包含现有对象包的方式来创建新类型的对象（一个类作为另一个类的一个属性？），因此可以在程序中构建复杂的体系，同时将其复杂性隐蔽在对象的简单性背后。</p>
+</li>
+<li><p><em>每个对象都有其类型</em>。按通用说法就是每个对象都是某个类class的一个实例instance。每个类最重要的区别在于其他类的特性就是可以发送什么样的消息给它。</p>
+</li>
+<li><p><em>某一特定类型的所有对象都可以接受同样的消息</em>。</p>
+</li>
+</ul>
+<p>对于对象更简洁的描述：<strong>对象具有状态，行为和标识</strong>。</p>
+<p>所有的对象都是唯一的，但同时也是具有相同特性和行为的类的一部分。</p>
+<blockquote>
+<p>因为类描述了具有相同特性（数据元素）和行为（功能）的对象集合，<strong>所以一个类实际上就是一个数据类型</strong>，例如所有浮类型的数字具有相同的特性和行为集合。<code>二者的差异在于，程序员通过定义类来适应问题，而不再被迫只能使用现有的用来表示机器中的存储单元的数据类型</code>。可以根据需求，通过添加新的数据类型来扩展编程语言。编程系统欣然接受新的类，并像对待内置类型一样地管照他们和进行类型检查。</p>
+</blockquote>
+<p>面向对象程序设计的挑战之一：在问题空间和解空间的对象之间怎么进行一对一映射。</p>
+<blockquote>
+<p>当正试图开发或理解一个程序设计时，最好的方法之一就是将对象想象为<strong>服务提供者</strong>。程序本身将对用户提供服务，它通过调用其他对象提供的服务来实现这一目的。你的目标就是去创建能够提供理想的服务来解决问题的一系列对象。</p>
+</blockquote>
+<p>每个对象都只能满足某些请求，这些请求由对象的接口所定义，决定接口的便是类型。</p>
+<blockquote>
+<p>将对象看作是服务提供者的一个附带好处就是它有助于提高对象的内聚性。高内聚是软件设计的基本质量要求之一：这意味着一个软件构件的各个方面都组合的很好。人们在设计对象时所面临的一个问题是，将过多的功能都塞到一个对象中。<strong>在良好的面向对象设计中，每个对象都可以很好的完成一项任务，但是它并不试图做更多的事情</strong>。（程序设计单一职责原则？）</p>
+</blockquote>
+<p><strong>代码复用</strong>是面向对象程序设计语言所提供的优点之一。</p>
+<blockquote>
+<p>最简单的复用某个类的方式就是直接使用该类的一个对象，此外也可以将那个类的一个对象置于某个新的类中。我们称其为“创建一个成员对象”。新的类可以由任意数量、任意类型的其他对象以任意可以实现新类中想要的功能的方式所组成。以为是使用现有的类合成新的类，这种概念被称为组合。如果组合是动态发生的，那么它通常被称为聚合。<strong>组合其实就是包含关系</strong>。</p>
+</blockquote>
+<p>由于继承非常重要，经常被高度强调，新手通常会有这种印象：处处都应该使用继承。其实这会导致难以使用并过分复杂的设计。实际上建立一个新类是应该首先考虑组合。</p>
+<p>继承使用基类型和导出类型的概念来描述这种类型之间的相似性。</p>
+<p>类型不仅仅是描述了作用于一个对象集合上的约束条件，同时还有与其他类型之间的关系。</p>
+<p>通过继承产生的类型等价性是理解面向对象程序设计方法内涵的重要门槛。</p>
+<blockquote>
+<p>当继承现有类型时，也就创建了新的类型。这个新的类型不仅包括现有类型的所有成员，更复制了基类的接口。也就是说所有可以发送给基类的消息同时也可以发送给导出类。由于通过发送给类的消息的类型可知类的类型，所以这也就意味着导出类与基类具有相同的类型。例如：圆形也就是一个几何形。</p>
+</blockquote>
+<p>基类如果与导出类没有差异，那么这个继承毫无意义。要让他们产生差异，有两种方法。一是直接在导出类中添加新方法，二是在导出类中覆盖也就是重写某个或某些方法。这其实是一个is-like-a和is-a的区别。is-a里包含着替代原则。</p>
+<p>多态</p>
+<p>对一个基类发送一个泛化消息时，对象会根据自身的具体类型来执行恰当的代码。如何实现的？面向对象程序设计语言使用了后期绑定的概念。</p>
+<p>一个非面向对象编程的编译器产生的函数调用会引起所谓的前期绑定，这么做意味着，编译器将产生对一个具体函数名字的调用，而运行时将这个调用解析到将要被执行的代码的绝对地址。</p>
+<p>然而在OOP中，程序知道运行时才能够确定代码的地址，所以当消息发送到一个泛化对象时，必须采用其他机制。</p>
+<p>为解决这个问题，面向对象程序设计语言使用了后期绑定的概念。当向对象发送消息时，被调用的代码直到运行时才能确定。编译器确保被调用的方法的存在，并对调用参数和返回值执行类型检查（无法提供此类保证的语言被称为弱类型的），但是不知道将被执行的确切代码。</p>
+<p>为了执行后期绑定，Java使用在对象中存储的信息来计算方法体的地址来代替绝对地址调用。根据这段逻辑每一个对象都可以具有不同的行为表现啊。JAVA中动态绑定时默认行为，不需要额外的关键字来实现这种后期动态绑定。</p>
+<p>单根继承Java所有的类最终都继承自单一基类Object</p>
+<p>单根继承结构保证所有对象都具备某些功能，可以在每个对象上执行某些基本操作。所有对象更容易在堆上创建，而参数传递也得到极大的简化。</p>
+<p>单根继承结构使垃圾回收器的实现变得更容易。</p>
+<p>容器</p>
+<p>不同的容器提供不同类型的结构和外部行为</p>
+<p>不同容器对于某些操作有不同的效率（例如老生常谈的ArrayList与LinkedList）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/24/%E4%B8%80%E5%88%B7java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E7%AC%94%E8%AE%B0(1)/" data-id="ckqayrn1g0003h0sv7xfa46n6"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/06/22/My-First-Blog/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">My First Blog</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>
